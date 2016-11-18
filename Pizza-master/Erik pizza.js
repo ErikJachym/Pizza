@@ -33,12 +33,24 @@ return .50*this.veggieToppings.length;)
 }
 }
 
-cost(){
-  return (this.sizeCost()+this.meatToppingsCost()+this.veggieToppingsCost();
+price(){
+  return (this.sizeCost()+this.meatToppingsCost("meat")+this.veggieToppingsCost("veggie");
 }
+
+addTopping(toptype,newtype){
+  if (toptype == "meat"){
+    thismeatToppings.push(newTop);
+  else if (toptype == "veggie"){
+    this.veggieToppings.push(newTop);
+  }
+}
+
   //type class functions below
 
-static promotionalDeal(){
+static promotionalDeal(pizza,percent){
+  let z=100-percent
+  d=d/100
+return pizza.price()*z;
+}
 
-}
-}
+static
